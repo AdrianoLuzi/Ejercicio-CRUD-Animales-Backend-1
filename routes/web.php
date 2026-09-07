@@ -1,5 +1,11 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
 
+Route::get('/', function () {
+    return redirect()->route('animales.index');
+});
 // GET: Para listar animales y mostrar formularios de creación/edición.
 Route::get('/animales', [AnimalController::class, 'index'])->name('animales.index');
 Route::get('/animales/crear', [AnimalController::class, 'create'])->name('animales.create');
